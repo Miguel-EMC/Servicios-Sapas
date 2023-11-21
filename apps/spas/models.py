@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 import uuid
+from apps.users.models import User
 
 class Spa(models.Model):
     options = (
@@ -16,7 +17,7 @@ class Spa(models.Model):
     published = models.DateTimeField(default=timezone.now)
     status = models.CharField(max_length=10, choices=options, default="published")
     
-    #person_spa_id = models.OneToOneField(User, on_delete=models.PROTECT, null=True)
+    person_spa_id = models.OneToOneField(User, on_delete=models.PROTECT, null=True)
 
     def __str__(self) -> str:
         return self.name

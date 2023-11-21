@@ -22,5 +22,6 @@ urlpatterns = [
     path('api/services/', include('apps.services.urls')),
     path('api/categories/', include('apps.categories.urls')),
     path('api/spas/', include('apps.spas.urls')),
+    path('api/', include('apps.users.urls')),
 
 ]
